@@ -1,4 +1,6 @@
-# How to loading app in Development
+# How to load app in Production and Development
+
+Open [https://agitated-darwin-074112.netlify.app/](https://agitated-darwin-074112.netlify.app/) to view production in the browser.
 
 ## Available Scripts
 
