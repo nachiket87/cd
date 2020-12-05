@@ -2,7 +2,7 @@
 import React from "react";
 import { Col, Row, Form, Label, Input } from "reactstrap";
 
-const SORTBYOPTIONS = ["name", "email", "username"];
+const SORTBYOPTIONS = ["", "name", "email", "username"];
 
 const SearchFields = (props) => {
   const { sortBy, setSearchTerm } = props;
