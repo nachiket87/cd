@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { fetchData } from "../utilities/getdata";
+import { fetchData } from "../utilities/getData";
 import UserCard from "./UserCard";
 import SearchFields from "./SearchFields";
 
