@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import React from "react";
-import { Form, Label, Input } from "reactstrap";
+import { Col, Row, Form, Label, Input } from "reactstrap";
 
 const SORTBYOPTIONS = ["name", "email", "username"];
 
@@ -13,16 +13,30 @@ const SearchFields = (props) => {
       : setSearchTerm(event.target.value);
   };
   return (
-    <Form>
-      <Label htmlFor="Search">Search </Label>
-      <Input onChange={handleChange} id="search" />
-      <Label for="exampleSelectMulti">Sort By:</Label>
-      <Input type="select" name="select" id="sortby" onChange={handleChange}>
-        {SORTBYOPTIONS.map((options) => {
-          return <option key={options}>{options}</option>;
-        })}
-      </Input>
-    </Form>
+    <>
+      <Form>
+        <Row form md={6}>
+          <Col md={8}></Col>
+          <Col sm={4}>
+            <Label htmlFor="Search">Search </Label>
+            <Input onChange={handleChange} id="search" />
+          </Col>
+          <Col sm={6}>
+            <Label for="exampleSelectMulti">Sort By</Label>
+            <Input
+              type="select"
+              name="select"
+              id="sortby"
+              onChange={handleChange}
+            >
+              {SORTBYOPTIONS.map((options) => {
+                return <option key={options}>{options}</option>;
+              })}
+            </Input>
+          </Col>
+        </Row>
+      </Form>
+    </>
   );
 };
 

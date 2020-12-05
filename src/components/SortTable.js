@@ -26,11 +26,8 @@ const SortTable = () => {
 
   return (
     <div>
-      <div>
-        <h2>Users</h2>
-        <h2>{sortBy}</h2>
-        <SearchFields sortBy={setSortBy} setSearchTerm={setSearchTerm} />
-      </div>
+      <h2>Users</h2>
+      <SearchFields sortBy={setSortBy} setSearchTerm={setSearchTerm} />
       {listOfCards}
     </div>
   );

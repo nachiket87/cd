@@ -5,9 +5,7 @@ import { Container } from "reactstrap";
 const App = () => {
   return (
     <Container>
-      <div className="App">
-        <SortTable />
-      </div>
+      <SortTable />
     </Container>
   );
 };
