@@ -6,27 +6,30 @@ import SearchFields from "./SearchFields";
 const USERS_URL = "http://jsonplaceholder.typicode.com/users";
 
 const SortTable = () => {
-  const [users, setUsers] = useState();
+  const [userList, setUserList] = useState();
+  const [sortBy, setSortBy] = useState("name");
+  const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
-    fetchData(USERS_URL, setUsers);
+    fetchData(USERS_URL, setUserList);
   }, []);
 
   let listOfCards = [];
-  if (users) {
-    listOfCards = users.map((user) => {
+  if (userList) {
+    const filteredUsers = userList.filter((user) =>
+      user[`${sortBy}`].includes(searchTerm)
+    );
+    listOfCards = filteredUsers.map((user) => {
       return <UserCard props={user} key={user.name} />;
     });
   }
 
-  /*const handleChange = (e) => {
-    console.log(e.target.value);
-  };*/
   return (
     <div>
       <div>
-        <h2> Users </h2>
-        <SearchFields />
+        <h2>Users</h2>
+        <h2>{sortBy}</h2>
+        <SearchFields sortBy={setSortBy} setSearchTerm={setSearchTerm} />
       </div>
       {listOfCards}
     </div>
