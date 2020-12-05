@@ -3,7 +3,7 @@ import { fetchData } from "../utilities/getData";
 import UserCard from "./UserCard";
 import SearchFields from "./SearchFields";
 
-const USERS_URL = "http://jsonplaceholder.typicode.com/users";
+const USERS_URL = "https://jsonplaceholder.typicode.com/users";
 
 const SortTable = () => {
   const [userList, setUserList] = useState();
@@ -30,7 +30,7 @@ const SortTable = () => {
     }
 
     listOfCards = sortedUsers.map((user) => {
-      return <UserCard props={user} key={user.name} />;
+      return <UserCard user={user} key={user.name} />;
     });
   }
 

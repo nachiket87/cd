@@ -2,8 +2,8 @@
 import React from "react";
 import "../styles.css";
 
-const UserCard = ({ props }) => {
-  const { name, email, username } = props;
+const UserCard = ({ user }) => {
+  const { name, email, username } = user;
   return (
     <div className="card-user">
       <div className="card-user-infos">
