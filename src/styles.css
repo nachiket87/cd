@@ -1,13 +1,12 @@
 .card-user {
   overflow: hidden;
-  height: 120px;
   background: white;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  margin: 0.5rem 0;
   justify-content: space-between;
+  border: 1px solid grey;
 }
 .card-user:hover {
   background-color: rgb(192, 192, 192);
@@ -31,4 +30,9 @@
 
 .card-user .card-user-infos {
   padding: 16px;
+}
+.card-user img {
+  height: 100%;
+  width: 120px;
+  object-fit: cover;
 }

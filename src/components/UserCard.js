@@ -7,12 +7,12 @@ const UserCard = ({ props }) => {
   return (
     <div className="card-user">
       <div className="card-user-infos">
-        <div>
-          <h2>{name}</h2>
-          <p>{username}</p>
-        </div>
+        <h2>{name}</h2>
+        <p>{username}</p>
       </div>
-      <div className="card-user-infos">{email}</div>
+      <div className="card-user-infos">
+        <a href={`mailto:${email}`}> {email}</a>
+      </div>
     </div>
   );
 };
