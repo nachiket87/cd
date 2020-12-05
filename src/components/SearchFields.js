@@ -15,13 +15,15 @@ const SearchFields = (props) => {
   return (
     <>
       <Form>
-        <Row form md={6}>
-          <Col md={8}></Col>
-          <Col sm={4}>
+        <Row form style={{ margin: "1rem 0" }}>
+          <Col>
+            <h2> Users</h2>{" "}
+          </Col>
+          <Col sm={12} lg={4} md={12} style={{ padding: "0" }}>
             <Label htmlFor="Search">Search </Label>
             <Input onChange={handleChange} id="search" />
           </Col>
-          <Col sm={6}>
+          <Col sm={6} lg={2} md={12}>
             <Label for="exampleSelectMulti">Sort By</Label>
             <Input
               type="select"
