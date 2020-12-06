@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { fetchData } from "../utilities/getData";
 import UserCard from "./UserCard";
 import SearchFields from "./SearchFields";
+import { fetchData } from "../utilities/getData";
 
 const USERS_URL = "https://jsonplaceholder.typicode.com/users";
 
@@ -16,6 +16,7 @@ const SortTable = () => {
 
   let listOfCards = [];
   if (userList) {
+    console.log(userList);
     const filteredUsers = userList.filter(
       (user) =>
         user["name"].includes(searchTerm) ||
