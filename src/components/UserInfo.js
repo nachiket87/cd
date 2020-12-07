@@ -4,59 +4,59 @@ import { fetchData } from "../utilities/getData";
 import { CardColumns, Card, CardBody, CardTitle } from "reactstrap";
 import { Link } from "react-router-dom";
 import contactInfoLister from "../utilities/contactInfoLister";
-import Posts from "./Posts";
+import Post from "./Posts";
 
 const UserInfo = ({ props }) => {
   const user = props;
   const postUrl = `http://jsonplaceholder.typicode.com/posts?userId=${user.id}`;
-  const [posts, setPosts] = useState();
+  const [posts, setPosts] = useState([]);
 
   useEffect(() => {
     fetchData(postUrl, setPosts);
   }, []);
 
-  if (posts) {
-    const contactKeys = ["username", "email", "phone", "website"];
-    const addressKeys = ["suite", "street", "city", "zipcode"];
-    const companyKeys = ["name", "bs", "catchPhrase"];
+  const postList = posts.map((post) => {
+    return <Post post={post} key={post.id} />;
+  });
 
-    const contactInfo = contactInfoLister(contactKeys, user, "contact");
-    const addressInfo = contactInfoLister(addressKeys, user.address, "address");
-    const companyInfo = contactInfoLister(companyKeys, user.company, "company");
+  const contactKeys = ["username", "email", "phone", "website"];
+  const addressKeys = ["suite", "street", "city", "zipcode"];
+  const companyKeys = ["name", "bs", "catchPhrase"];
 
-    return (
-      <>
-        <h2>
-          <Link to="/">{`User`}</Link> {`> ${user.name}`}
-        </h2>
-        <CardColumns>
-          <Card>
-            <CardBody>
-              <CardTitle tag="h5">Contact Info </CardTitle>
-              {contactInfo}
-            </CardBody>
-          </Card>
-          <Card>
-            <CardBody>
-              <CardTitle tag="h5">Address</CardTitle>
-              {addressInfo}
-            </CardBody>
-          </Card>
-          <Card>
-            <CardBody>
-              <CardTitle tag="h5">Company</CardTitle>
-              {companyInfo}
-            </CardBody>
-          </Card>
-        </CardColumns>
+  const contactInfo = contactInfoLister(contactKeys, user, "contact");
+  const addressInfo = contactInfoLister(addressKeys, user.address, "address");
+  const companyInfo = contactInfoLister(companyKeys, user.company, "company");
 
-        <h3>Posts by {user.name}</h3>
-        <Posts allposts={posts} />
-      </>
-    );
-  } else {
-    return <div> testing </div>;
-  }
+  return (
+    <>
+      <h2>
+        <Link to="/">{`User`}</Link> {`> ${user.name}`}
+      </h2>
+      <CardColumns>
+        <Card>
+          <CardBody>
+            <CardTitle tag="h5">Contact Info </CardTitle>
+            {contactInfo}
+          </CardBody>
+        </Card>
+        <Card>
+          <CardBody>
+            <CardTitle tag="h5">Address</CardTitle>
+            {addressInfo}
+          </CardBody>
+        </Card>
+        <Card>
+          <CardBody>
+            <CardTitle tag="h5">Company</CardTitle>
+            {companyInfo}
+          </CardBody>
+        </Card>
+      </CardColumns>
+
+      <h3>Posts by {user.name}</h3>
+      <CardColumns>{postList}</CardColumns>
+    </>
+  );
 };
 
 export default UserInfo;
