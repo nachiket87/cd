@@ -2,6 +2,10 @@
   margin: 0;
   padding: 0;
 }
+
+li {
+  list-style-type: none;
+}
 .card-user {
   overflow: hidden;
   background: white;
