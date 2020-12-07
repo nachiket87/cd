@@ -1,18 +1,12 @@
-import React, { useEffect, useState } from "react";
+/* eslint-disable react/prop-types */
+import React, { useState } from "react";
 import UserCard from "./UserCard";
 import SearchFields from "./SearchFields";
-import { fetchData } from "../utilities/getData";
 
-const USERS_URL = "https://jsonplaceholder.typicode.com/users";
-
-const SortTable = () => {
-  const [userList, setUserList] = useState();
+const SortTable = ({ props }) => {
+  const userList = props;
   const [sortBy, setSortBy] = useState();
   const [searchTerm, setSearchTerm] = useState("");
-
-  useEffect(() => {
-    fetchData(USERS_URL, setUserList);
-  }, []);
 
   let listOfCards = [];
   if (userList) {
