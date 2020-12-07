@@ -13,6 +13,7 @@ const App = () => {
   useEffect(() => {
     fetchData(USERS_URL, setUserList);
   }, []);
+
   let routeList = [];
   if (userList) {
     routeList = userList.map((user) => {
@@ -21,7 +22,7 @@ const App = () => {
           exact
           key={user.id}
           path={`/user/${user.id}`}
-          component={() => <UserInfo props={user} />}
+          component={() => <UserInfo user={user} />}
         />
       );
     });
@@ -34,7 +35,7 @@ const App = () => {
           <Route
             exact
             path="/"
-            component={() => <SortTable props={userList} />}
+            component={() => <SortTable userlist={userList} />}
           />
           {routeList}
         </Switch>

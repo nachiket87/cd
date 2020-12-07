@@ -6,9 +6,8 @@ import { Link } from "react-router-dom";
 import contactInfoLister from "../utilities/contactInfoLister";
 import Post from "./Posts";
 
-const UserInfo = ({ props }) => {
-  const user = props;
-  const postUrl = `http://jsonplaceholder.typicode.com/posts?userId=${user.id}`;
+const UserInfo = ({ user }) => {
+  const postUrl = `https://jsonplaceholder.typicode.com/posts?userId=${user.id}`;
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {

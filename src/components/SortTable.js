@@ -3,8 +3,8 @@ import React, { useState } from "react";
 import UserCard from "./UserCard";
 import SearchFields from "./SearchFields";
 
-const SortTable = ({ props }) => {
-  const userList = props;
+const SortTable = ({ userlist }) => {
+  const userList = userlist;
   const [sortBy, setSortBy] = useState();
   const [searchTerm, setSearchTerm] = useState("");
 
