@@ -19,7 +19,6 @@ const UserInfo = (props) => {
   }, []);
 
   if (user && posts) {
-    console.log(user);
     const contactKeys = ["username", "email", "phone", "website"];
     const addressKeys = ["suite", "street", "city", "zipcode"];
     const companyKeys = ["name", "bs", "catchPhrase"];
