@@ -16,7 +16,6 @@ const SortTable = () => {
 
   let listOfCards = [];
   if (userList) {
-    console.log(userList);
     const filteredUsers = userList.filter(
       (user) =>
         user["name"].includes(searchTerm) ||

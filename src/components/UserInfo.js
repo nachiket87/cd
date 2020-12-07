@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { fetchData } from "../utilities/getData";
 import Posts from "./Posts";
-import { CardColumns, Spinner, Card, CardBody, CardTitle } from "reactstrap";
+import { CardColumns, Card, CardBody, CardTitle } from "reactstrap";
 import { Link } from "react-router-dom";
 import contactInfoLister from "../utilities/contactInfoLister";
 
@@ -58,8 +58,6 @@ const UserInfo = (props) => {
         <Posts allposts={posts} />
       </>
     );
-  } else {
-    return <Spinner style={{ width: "3rem", height: "3rem" }} />;
   }
 };
 
