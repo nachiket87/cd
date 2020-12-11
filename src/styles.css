@@ -17,12 +17,6 @@ li {
   border: 1px solid grey;
 }
 
-@media only screen and (max-width: 600px) {
-  .card-user {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-}
 .card-user:hover {
   background-color: rgb(192, 192, 192);
   cursor: pointer;
@@ -47,4 +41,21 @@ li {
   padding: 1rem;
   text-decoration: none;
   color: "black";
+}
+
+.infocards {
+  display: grid;
+  margin: 1rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+@media only screen and (max-width: 600px) {
+  .card-user {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .infocards {
+    grid-template-columns: none;
+  }
 }
