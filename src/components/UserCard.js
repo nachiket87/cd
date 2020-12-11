@@ -8,10 +8,7 @@ const UserCard = ({ user }) => {
   return (
     <div className="card-user">
       <div className="card-user-infos">
-        <Link
-          to={`user/${id}`}
-          style={{ color: "black", textDecoration: "none" }}
-        >
+        <Link to={`user/${id}`} style={{ color: "black" }}>
           <h2>{name}</h2>
           <p>{username}</p>
         </Link>

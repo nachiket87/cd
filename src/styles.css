@@ -16,6 +16,7 @@ li {
   justify-content: space-between;
   border: 1px solid grey;
 }
+
 @media only screen and (max-width: 600px) {
   .card-user {
     flex-direction: column;
@@ -43,5 +44,7 @@ li {
 }
 
 .card-user .card-user-infos {
-  padding: 16px;
+  padding: 1rem;
+  text-decoration: none;
+  color: "black";
 }

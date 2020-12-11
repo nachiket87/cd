@@ -19,11 +19,11 @@ const SearchFields = (props) => {
           <Col>
             <h2> Users</h2>{" "}
           </Col>
-          <Col sm={12} lg={4} md={12} style={{ padding: "0" }}>
+          <Col sm={12} md={12} lg={4} style={{ padding: "0" }}>
             <Label htmlFor="Search">Search </Label>
             <Input onChange={handleChange} id="search" />
           </Col>
-          <Col sm={6} lg={2} md={12}>
+          <Col sm={6} md={12} lg={2}>
             <Label for="exampleSelectMulti">Sort By</Label>
             <Input
               type="select"
@@ -31,8 +31,8 @@ const SearchFields = (props) => {
               id="sortby"
               onChange={handleChange}
             >
-              {SORTBYOPTIONS.map((options) => {
-                return <option key={options}>{options}</option>;
+              {SORTBYOPTIONS.map((choices) => {
+                return <option key={choices}>{choices}</option>;
               })}
             </Input>
           </Col>

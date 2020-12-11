@@ -1,9 +1,11 @@
 /* eslint-disable react/prop-types */
 import React, { useEffect, useState } from "react";
-import { fetchData } from "../utilities/getData";
 import { CardColumns, Card, CardBody, CardTitle } from "reactstrap";
 import { Link } from "react-router-dom";
+
 import contactInfoLister from "../utilities/contactInfoLister";
+import { fetchData } from "../utilities/getData";
+
 import Post from "./Posts";
 
 const UserInfo = ({ user }) => {
@@ -34,7 +36,7 @@ const UserInfo = ({ user }) => {
       <CardColumns>
         <Card>
           <CardBody>
-            <CardTitle tag="h5">Contact Info </CardTitle>
+            <CardTitle tag="h5">Contact Info</CardTitle>
             {contactInfo}
           </CardBody>
         </Card>
