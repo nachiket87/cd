@@ -9,8 +9,16 @@ const UserCard = ({ user }) => {
     <div className="card-user">
       <div className="card-user-infos">
         <Link to={`user/${id}`} style={{ color: "black" }}>
-          <h2>{name}</h2>
-          <p>{username}</p>
+          <div style={{ display: "flex" }}>
+            <div className="avatar">
+              {name.split(" ")[0].charAt(0)}
+              {name.split(" ")[1].charAt(0)}
+            </div>
+            <div>
+              <h2>{name}</h2>
+              <p>{username}</p>
+            </div>
+          </div>
         </Link>
       </div>
       <div className="card-user-infos">

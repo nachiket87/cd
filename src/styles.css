@@ -1,3 +1,4 @@
+/* Base css changes */
 * {
   margin: 0;
   padding: 0;
@@ -6,6 +7,9 @@
 li {
   list-style-type: none;
 }
+
+/* User Info Styles - Cards on main  */
+
 .card-user {
   overflow: hidden;
   background: white;
@@ -40,8 +44,23 @@ li {
 .card-user .card-user-infos {
   padding: 1rem;
   text-decoration: none;
-  color: "black";
 }
+
+/* User Avatar */
+
+.avatar {
+  background-color: #ccc;
+  margin-right: 0.5rem;
+  border-radius: 50%;
+  height: 3rem;
+  width: 3rem;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+/* User Personal Info Styling - Main Grid for Posts / Address / Contact Info etc */
 
 .infocards {
   display: grid;
