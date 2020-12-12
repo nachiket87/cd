@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import SortTable from "./components/SortTable";
 import UserInfo from "./components/UserInfo";
 import { fetchData } from "./utilities/getData";
-import { Container } from "reactstrap";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 const USERS_URL = "https://jsonplaceholder.typicode.com/users";
@@ -29,7 +28,7 @@ const App = () => {
   }
 
   return (
-    <Container>
+    <>
       <Router>
         <Switch>
           <Route
@@ -40,7 +39,7 @@ const App = () => {
           {routeList}
         </Switch>
       </Router>
-    </Container>
+    </>
   );
 };
 

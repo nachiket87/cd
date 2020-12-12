@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import UserCard from "./UserCard";
 import SearchFields from "./SearchFields";
+import { Container } from "reactstrap";
 
 const SortTable = ({ userlist }) => {
   const userList = userlist;
@@ -29,10 +30,10 @@ const SortTable = ({ userlist }) => {
   }
 
   return (
-    <>
+    <Container>
       <SearchFields sortBy={setSortBy} setSearchTerm={setSearchTerm} />
       {listOfCards}
-    </>
+    </Container>
   );
 };
 export default SortTable;

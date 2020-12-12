@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import React, { useEffect, useState } from "react";
-import { Card, CardBody, CardTitle } from "reactstrap";
+import { Container, Card, CardBody, CardTitle } from "reactstrap";
 import { Link } from "react-router-dom";
 
 import contactInfoLister from "../utilities/contactInfoLister";
@@ -29,7 +29,7 @@ const UserInfo = ({ user }) => {
   const companyInfo = contactInfoLister(companyKeys, user.company, "company");
 
   return (
-    <>
+    <Container fluid={true}>
       <h2>
         <Link to="/">{`User`}</Link> {`> ${user.name}`}
       </h2>
@@ -55,7 +55,7 @@ const UserInfo = ({ user }) => {
       </div>
       <h3>Posts by {user.name}</h3>
       <div className="infocards">{postList}</div>
-    </>
+    </Container>
   );
 };
 
